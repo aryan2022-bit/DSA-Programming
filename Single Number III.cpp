@@ -6,7 +6,12 @@ public:
             val = val ^ num;
         }
 
-        int bit = val & -val;
+        int index = 0;
+        while(((val >> index) & 1) == 0){
+            index++;
+        }
+
+        int bit = 1 << index;
 
         int a = 0, b = 0;
 
