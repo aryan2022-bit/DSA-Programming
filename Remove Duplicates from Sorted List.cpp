@@ -13,7 +13,7 @@ public:
         }
         curr = head;
 
-        for(int i = 1; i <= len && curr -> next != nullptr; i++){
+        while(curr != nullptr && curr -> next != nullptr){
             if(curr -> val == curr -> next -> val){
                 ListNode* temp = curr -> next;
                 curr -> next = curr -> next -> next;
