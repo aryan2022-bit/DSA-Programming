@@ -7,11 +7,11 @@ public:
         ListNode* curr  = head;
         int len = 0;
 
-        while(curr != nullptr){
-            len++;
-            curr = curr -> next;
-        }
-        curr = head;
+        // while(curr != nullptr){
+        //     len++;
+        //     curr = curr -> next;
+        // }
+        // curr = head;
 
         while(curr != nullptr && curr -> next != nullptr){
             if(curr -> val == curr -> next -> val){
