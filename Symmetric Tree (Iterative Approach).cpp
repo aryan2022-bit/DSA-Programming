@@ -1,6 +1,7 @@
 class Solution {
 public:
     bool isSymmetric(TreeNode* root) {
+        if(root == nullptr) return true;
         queue<TreeNode*> mirror;
         mirror.push(root -> left);
         mirror.push(root -> right);
