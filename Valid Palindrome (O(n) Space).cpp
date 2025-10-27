@@ -12,7 +12,7 @@ public:
                 if (c >= 'A' && c <= 'Z') {
                     c = c - 'A' + 'a';
                 }
-                cleaned = cleaned + c;
+                cleaned.push_back(c);
             }
         }
 
