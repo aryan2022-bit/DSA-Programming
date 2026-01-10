@@ -1,0 +1,33 @@
+class Solution {
+public:
+    int candy(vector<int>& ratings) {
+        int n = ratings.size();
+        vector<int> candies(n);
+
+        // Step 1 : Giving atleast one candy to everyone
+        for(int i = 0; i < n; i++){
+            candies[i] = 1;
+        }
+
+        // Step 2 : (Left -> Right)
+        for(int i = 1; i < n; i++){
+            if(ratings[i] > ratings[i-1]){
+                candies[i] = candies[i-1] + 1;
+            }
+        }
+
+        // Step 3 : (Right -> Left)
+        for(int i = n-2; i >= 0; i--){
+            if(ratings[i] > ratings[i+1]){
+                candies[i] = max(candies[i], candies[i + 1] + 1);
+            }
+        }
+
+        // Step 4 : Total
+        int total = 0;
+        for(int c : candies){
+            total = total + c;
+        }
+        return total;
+    }
+};
